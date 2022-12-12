@@ -5,7 +5,11 @@ from time import sleep
 
 URL = "https://api.wazirx.com/api/v2/tickers"
 PAIR = 'btcinr'
+
+# Waiting time in seconds
 WAITING_TIME = 60
+
+# Window size in pixels
 WINDOW_SIZE = (300, 500, 3)
 
 
@@ -27,9 +31,11 @@ def change(old):
     delta = (new-old)
     if delta >= 0:
         col = (0, 150, 0)
+        # Green
 
     else:
         col = (0, 0, 150)
+        # Red
 
     return [delta, col]
 
