@@ -22,6 +22,7 @@ def get_data():
 
 def change(old):
     new = get_data()[2]
+    # print('New', new)
 
     delta = (new-old)
     if delta >= 0:
@@ -47,10 +48,13 @@ def add_text(text, location, color=(255, 255, 255), scale=1):
 
 while True:
     data = get_data()
-    old_avg = (data[0] + data[1])/2
+    old_avg = ((data[0] + data[1])/2)
     delta_attr = change(old_avg)
     deltacolor = delta_attr[1]
     deltavalue = delta_attr[0]
+
+    # print('Old', old_avg)
+    # print('Chg', deltavalue, '\n')
 
     img = np.zeros(WINDOW_SIZE, dtype=np.uint8)
 
@@ -69,7 +73,7 @@ while True:
              (10, 250),
              color=deltacolor)
 
-    cv2.imshow(PAIR.upper(), img)
+    cv2.imshow(PAIR.upper() + 'Price Ticker', img)
     cv2.waitKey(1)
     sleep(WAITING_TIME)
     cv2.destroyAllWindows()

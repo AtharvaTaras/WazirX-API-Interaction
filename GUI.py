@@ -1,7 +1,7 @@
 import tkinter as tk
 import requests
 
-DELAY = 2000
+DELAY = 5000
 URL = "https://api.wazirx.com/api/v2/tickers"
 
 
